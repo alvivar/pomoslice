@@ -1,50 +1,59 @@
 
-# pomoslice v0.1
-# Tool that time boxes hours into batches of work and rest.
-
-# @matnesis
-# 2018/09/09 07:27 pm
-
 
 import argparse
+import os
+import sys
+
+app_name = "pomoslice v0.1"
+app_file = os.path.basename(sys.argv[0])
+app_description = "tool that time boxes hours into batches of work and rest"
+
+# 2018/09/09 07:27 pm
+# @matnesis
 
 
 if __name__ == '__main__':
 
-    POMOSLICE = """
-    pomoslice v0.1
+    pomoslice = f"""
+    {app_name}
     """
-    print(POMOSLICE)
+    print(pomoslice)
 
     # Command line
-    PARSER = argparse.ArgumentParser(
-        description="tool that time boxes hours into batches of work and rest")
-    PARSER.add_argument(
+    parser = argparse.ArgumentParser(description=app_description)
+    parser.add_argument(
         "-hs",
         "--hours",
         help="hours that you wanna work",
         type=float,
         required=True)
-    PARSER.add_argument(
+    parser.add_argument(
         "-bs",
         "--batches",
         help="batches of work & rest that you wanna do",
         type=int,
         required=True)
-    PARSER.add_argument(
+    parser.add_argument(
         "-r",
         "--rest-ratio",
         help="percentage of the batch used for resting (default 25)",
         type=int,
         default=25)
-    ARGS = PARSER.parse_args()
+
+    try:
+        args = parser.parse_args()
+    except SystemExit:
+        print(f'example: {app_file} -hs 8 -bs 7')
+        print(f'help: {app_file} -h')
+        print(f"\n{app_description}")
+        parser.exit()
 
     # Arguments to data
 
-    hours = 0 if ARGS.hours < 0 else ARGS.hours
+    hours = 0 if args.hours < 0 else args.hours
     minutes = hours * 60
-    batches = 1 if ARGS.batches < 1 else ARGS.batches
-    rest_ratio = ARGS.rest_ratio
+    batches = 1 if args.batches < 1 else args.batches
+    rest_ratio = args.rest_ratio
     rest_ratio = 100 if rest_ratio > 100 else rest_ratio
     rest_ratio = 0 if rest_ratio < 0 else rest_ratio
 
@@ -59,7 +68,7 @@ if __name__ == '__main__':
     # Results
 
     print(f"In {hours} hour{'s' if hours > 1 else ''},\n"
-          f"you should work {batches} batch{'es' if batches > 1 else ''} of {work_time} minutes,\n"
+          f"you could work {batches} batch{'es' if batches > 1 else ''} of {work_time} minutes,\n"
           f"resting {rest_time} minutes in between,\n"
           f"for a total of {effective_hours} effective hours!")
 
