@@ -1,4 +1,5 @@
 # pomoslice v0.1
+Some times is kind of scary to think about time in this way. Hm.
 ```
 usage: pomoslice.py [-h] -t HOURS -b BATCHES [-r REST_RATIO]
 
