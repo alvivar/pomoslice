@@ -1,8 +1,9 @@
 
 # pomoslice v0.1
-# Time boxes hours into batches of work & rest!
+# Tool that time boxes hours into batches of work and rest.
 
-# @matnesis 2018/09/09 07:27 pm
+# @matnesis
+# 2018/09/09 07:27 pm
 
 
 import argparse
@@ -17,7 +18,7 @@ if __name__ == '__main__':
 
     # Command line
     PARSER = argparse.ArgumentParser(
-        description="time boxes hours into batches of work and rest!")
+        description="tool that time boxes hours into batches of work and rest.")
     PARSER.add_argument(
         "-t",
         "--hours",
