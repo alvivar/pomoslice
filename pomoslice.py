@@ -5,8 +5,8 @@ import os
 import sys
 
 app_name = "pomoslice v0.1"
-app_file = os.path.basename(sys.argv[0])
 app_description = "tool that time boxes hours into batches of work and rest"
+app_file = os.path.basename(sys.argv[0])
 
 # 2018/09/09 07:27 pm
 # @matnesis
@@ -59,9 +59,9 @@ if __name__ == '__main__':
 
     # Pomo slicing
 
-    minutes_per_block = round(minutes / batches)
-    work_time = round(minutes_per_block * (100 - rest_ratio) / 100)
-    rest_time = round(minutes_per_block * rest_ratio / 100)
+    minutes_per_batch = round(minutes / batches)
+    work_time = round(minutes_per_batch * (100 - rest_ratio) / 100)
+    rest_time = round(minutes_per_batch * rest_ratio / 100)
     effective_minutes = work_time * batches
     effective_hours = round(effective_minutes / 60 * 10) / 10
 
