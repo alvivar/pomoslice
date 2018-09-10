@@ -14,10 +14,9 @@ app_file = os.path.basename(sys.argv[0])
 
 if __name__ == '__main__':
 
-    pomoslice = f"""
+    print(f"""
     {app_name}
-    """
-    print(pomoslice)
+    """)
 
     # Command line
     parser = argparse.ArgumentParser(description=app_description)
