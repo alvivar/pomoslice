@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
     # Command line
     PARSER = argparse.ArgumentParser(
-        description="tool that time boxes hours into batches of work and rest.")
+        description="tool that time boxes hours into batches of work and rest")
     PARSER.add_argument(
         "-t",
         "--hours",

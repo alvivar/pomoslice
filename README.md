@@ -5,7 +5,7 @@ Some times is kind of scary to think about time in this way. Hm.
 ```
 usage: pomoslice.py [-h] -t HOURS -b BATCHES [-r REST_RATIO]
 
-tool that time boxes hours into batches of work and rest.
+tool that time boxes hours into batches of work and rest
 
 optional arguments:
   -h, --help            show this help message and exit
