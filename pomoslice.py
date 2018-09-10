@@ -44,8 +44,9 @@ if __name__ == '__main__':
     hours = 0 if ARGS.hours < 0 else ARGS.hours
     minutes = hours * 60
     batches = 1 if ARGS.batches < 1 else ARGS.batches
-    rest_ratio = 100 if ARGS.rest_ratio > 100 else ARGS.rest_ratio
-    rest_ratio = 0 if ARGS.rest_ratio < 0 else ARGS.rest_ratio
+    rest_ratio = ARGS.rest_ratio
+    rest_ratio = 100 if rest_ratio > 100 else rest_ratio
+    rest_ratio = 0 if rest_ratio < 0 else rest_ratio
 
     # Pomo slicing
 
