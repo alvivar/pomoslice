@@ -20,13 +20,13 @@ if __name__ == '__main__':
     PARSER = argparse.ArgumentParser(
         description="tool that time boxes hours into batches of work and rest")
     PARSER.add_argument(
-        "-t",
+        "-hs",
         "--hours",
         help="hours that you wanna work",
         type=float,
         required=True)
     PARSER.add_argument(
-        "-b",
+        "-bs",
         "--batches",
         help="batches of work & rest that you wanna do",
         type=int,
