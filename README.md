@@ -1,5 +1,7 @@
 # pomoslice v0.1
+
 Some times is kind of scary to think about time in this way. Hm.
+
 ```
 usage: pomoslice.py [-h] -t HOURS -b BATCHES [-r REST_RATIO]
 
@@ -14,6 +16,7 @@ optional arguments:
   -r REST_RATIO, --rest-ratio REST_RATIO
                         percentage of the batch used for resting (default 25)
 ```
+
 **$ pomoslice.py -t 8 -b 7**
 ```
 In 8.0 hours,
